@@ -88,7 +88,7 @@ jobs:
           [ "$VERSION" == "main" ] && VERSION=latest
 
           # Push apps
-          for IMAGE_NAME in $BASELINE_IMAGE_NAME $((ls -d app_*))
+          for IMAGE_NAME in $BASELINE_IMAGE_NAME $(ls -d app_*)
           do
             IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
 
