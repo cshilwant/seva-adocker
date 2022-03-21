@@ -39,7 +39,7 @@ jobs:
 
       - name: Build Apps
         run: |
-            for app in $((ls -d app_*))
+            for app in $(ls -d app_*)
             do
               docker build --build-arg BASE_DISTRO="$BASELINE_IMAGE_NAME" "$app" --file $app/Dockerfile --tag "$app"
             done
@@ -68,7 +68,7 @@ jobs:
 
       - name: Build Apps
         run: |
-            for app in $((ls -d app_*))
+            for app in $(ls -d app_*)
             do
               docker build --build-arg BASE_DISTRO="$BASELINE_IMAGE_NAME" "$app" --file $app/Dockerfile --tag "$app"
             done
