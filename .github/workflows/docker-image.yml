@@ -35,13 +35,13 @@ jobs:
 
       - name: Build Baseline
         run: |
-            docker build --build-arg BASE_DISTRO=$BASE_DISTRO demo_baseline --file Dockerfile --tag "$BASELINE_IMAGE_NAME"
+            docker build --build-arg BASE_DISTRO=$BASE_DISTRO demo_baseline --file demo_baseline/Dockerfile --tag "$BASELINE_IMAGE_NAME"
 
       - name: Build Apps
         run: |
             for app in $((ls -d app_*))
             do
-              docker build --build-arg BASE_DISTRO="$BASELINE_IMAGE_NAME" "$app" --file Dockerfile --tag "$app"
+              docker build --build-arg BASE_DISTRO="$BASELINE_IMAGE_NAME" "$app" --file $app/Dockerfile --tag "$app"
             done
 
   # Push image to GitHub Packages.
@@ -64,13 +64,13 @@ jobs:
 
       - name: Build Baseline
         run: |
-            docker build --build-arg BASE_DISTRO=$BASE_DISTRO demo_baseline --file Dockerfile --tag "$BASELINE_IMAGE_NAME"
+            docker build --build-arg BASE_DISTRO=$BASE_DISTRO demo_baseline --file demo_baseline/Dockerfile --tag "$BASELINE_IMAGE_NAME"
 
       - name: Build Apps
         run: |
             for app in $((ls -d app_*))
             do
-              docker build --build-arg BASE_DISTRO="$BASELINE_IMAGE_NAME" "$app" --file Dockerfile --tag "$app"
+              docker build --build-arg BASE_DISTRO="$BASELINE_IMAGE_NAME" "$app" --file $app/Dockerfile --tag "$app"
             done
 
       - name: Log into GitHub Container Registry
