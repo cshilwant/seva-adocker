@@ -25,12 +25,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Install Multi-arch
         run: |
           sudo apt-get update
           sudo apt-get install -y qemu binfmt-support qemu-user-static
           docker pull multiarch/qemu-user-static
           docker run --rm --privileged multiarch/qemu-user-static  --reset -p yes
+
       - name: Run tests
         run: |
           if [ -f docker-compose.test.yml ]; then
@@ -41,7 +43,6 @@ jobs:
           fi
 
   # Push image to GitHub Packages.
-  # See also https://docs.docker.com/docker-hub/builds/
   push:
     # Ensure test job passes before pushing image.
     needs: test
@@ -51,6 +52,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install Multi-arch
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu binfmt-support qemu-user-static
+          docker pull multiarch/qemu-user-static
+          docker run --rm --privileged multiarch/qemu-user-static  --reset -p yes
 
       - name: Build image
         run: docker build --build-arg BASE_DISTRO=$BASE_DISTRO . --file Dockerfile --tag $IMAGE_NAME
