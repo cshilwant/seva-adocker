@@ -3,7 +3,7 @@ ARG BASE_DISTRO=ghcr.io/nmenon/demo_baseline
 FROM $BASE_DISTRO
 
 
-LABEL org.opencontainers.image.source https://github.com/nmenon/adocker/thermostat_demo
+LABEL org.opencontainers.image.source https://github.com/nmenon/adocker/app_thermostat_demo
 
 RUN export DEBIAN_FRONTEND=non-interactive; apt-get update && \
          apt-get install -y git vim kmscube mesa-utils \
