@@ -18,4 +18,4 @@ RUN mkdir /tmp/gpu && cd /tmp/gpu && \
          git clone https://git.ti.com/git/apps/thermostat-demo.git thermostat_demo && \
          cd thermostat_demo && qmake && make
 
-
+ENTRYPOINT ["/tmp/gpu/thermostat_demo/ThermostatDemo"]
