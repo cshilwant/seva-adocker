@@ -1,6 +1,6 @@
 # use the version that corresponds to your electron version
 # https://trigodev.com/blog/develop-electron-in-docker
-FROM arm64v8/node:14-bullseye
+FROM arm64v8/node:14.16
 
 # install electron dependencies or more if your library has other dependencies
 RUN apt-get update && apt-get install \
