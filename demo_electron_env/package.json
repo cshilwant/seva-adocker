@@ -1,6 +1,6 @@
 {
-    "name": "electron-in-docker",
-    "version": "1.0.0",
+    "name": "gsg",
+    "version": "0.0.1",
     "description": "",
     "main": "src/main.js",
     "scripts": {
