@@ -43,7 +43,7 @@ jobs:
             for base in $(ls -d demo_*)
             do
               docker build --build-arg BASE_DISTRO=$BASE_DISTRO "$base" --file demo_baseline/Dockerfile --tag "$base"
-	    done
+            done
 
       - name: Build Apps
         run: |
