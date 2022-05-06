@@ -90,5 +90,7 @@ if [ "$WINDOW_TYPE" == "egl" ]; then
 	exit 1
 fi
 
-docker run -it --privileged $WINDOWING_OPTIONS -e LD_LIBRARY_PATH=/usr/lib \
+set -x
+docker run --rm -it --privileged $WINDOWING_OPTIONS -e LD_LIBRARY_PATH=/usr/lib \
+		-v `pwd`:/workdir \
 	--user=$(id -u):$(id -g) $*
