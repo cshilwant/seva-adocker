@@ -4,7 +4,8 @@ FROM $BASE_DISTRO
 
 LABEL org.opencontainers.image.source https://github.com/nmenon/adocker/demo_baseline
 
-RUN export DEBIAN_FRONTEND=noninteractive; apt-get update && \
+RUN export DEBIAN_FRONTEND=noninteractive; apt-get update
+RUN export DEBIAN_FRONTEND=noninteractive; \
          apt-get install -y git vim kmscube mesa-utils \
          qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtcreator qtwayland5 qtwayland5-dev-tools \
          wayland-protocols libwayland-dev libqt5waylandclient5 libqt5waylandcompositor5 \
