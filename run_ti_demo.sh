@@ -77,12 +77,14 @@ if [ "$WINDOW_TYPE" == "x.org" ]; then
 	WINDOWING_OPTIONS="-e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix  -e XAUTHORITY=~/.Xauthority"
 fi
 if [ "$WINDOW_TYPE" == "wayland" ]; then
+	if [ -e /dev/pvr_sync ]; then
+		PVR_VOLUME="-v /dev/pvr_sync:/dev/pvr_sync"
+	fi
 	WINDOWING_OPTIONS="-e XDG_RUNTIME_DIR=/tmp \
 	 -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY \
 	 -e QT_QPA_PLATFORM=wayland \
 	 -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY \
-	 -v /dev/dri:/dev/dri -v /dev/pvr_sync:/dev/pvr_sync \
-         --device-cgroup-rule='c 199:* rmw' --device-cgroup-rule='c 226:* rmw'
+	 -v /dev/dri:/dev/dri $PVR_VOLUME \
 	 "
 fi
 if [ "$WINDOW_TYPE" == "egl" ]; then
