@@ -1,4 +1,4 @@
 INTRODUCTION
 ============
 
-Provide  a baseline container based off arm64v8/debian:bullseye
+Provide a baseline docker image based off arm64v8/debian:bullseye

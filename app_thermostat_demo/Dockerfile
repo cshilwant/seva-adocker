@@ -1,9 +1,9 @@
-ARG BASE_DISTRO=ghcr.io/nmenon/demo_baseline
+ARG BASE_DISTRO=ghcr.io/cshilwant/demo_baseline
 
 FROM $BASE_DISTRO
 
 
-LABEL org.opencontainers.image.source https://github.com/nmenon/adocker/app_thermostat_demo
+LABEL org.opencontainers.image.source https://github.com/cshilwant/adocker/app_thermostat_demo
 
 RUN mkdir /tmp/gpu && cd /tmp/gpu && \
          git clone https://git.ti.com/git/apps/thermostat-demo.git thermostat_demo && \
