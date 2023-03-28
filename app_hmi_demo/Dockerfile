@@ -7,4 +7,4 @@ RUN mkdir /tmp/gpu && cd /tmp/gpu && \
          cd hmi-demo && qmake && make
 
 
-ENTRYPOINT ["/tmp/gpu/hmi_demo/IndustrialHMIDemo"]
+ENTRYPOINT ["/tmp/gpu/hmi_demo/hmi_demo"]
