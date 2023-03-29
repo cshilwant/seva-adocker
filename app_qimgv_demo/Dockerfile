@@ -1,4 +1,4 @@
-ARG BASE_DISTRO=ghcr.io/cshilwant/demo_baseline_qimgv
+ARG BASE_DISTRO=ghcr.io/cshilwant/demo_baseline
 
 FROM $BASE_DISTRO
 
