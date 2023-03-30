@@ -1,4 +1,4 @@
-ARG BASE_DISTRO=arm64v8/debian:bullseye
+ARG BASE_DISTRO=arm64v8/debian:stable-slim
 
 FROM $BASE_DISTRO
 
