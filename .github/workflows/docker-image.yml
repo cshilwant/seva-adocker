@@ -14,7 +14,7 @@ on:
   pull_request:
 
 env:
-  BASE_DISTRO: arm64v8/debian:bullseye
+  BASE_DISTRO: arm64v8/debian:stable-slim
   BASELINE_IMAGE_NAME: demo_baseline
   REGISTRY: ghcr.io
 
