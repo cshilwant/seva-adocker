@@ -10,7 +10,7 @@ on:
     tags:
       - v*
 
-  # Run tests for any PRs.
+  # Run workflow for any PRs.
   pull_request:
 
 env:
