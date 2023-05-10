@@ -1,9 +1,9 @@
-ARG BASE_DISTRO=ghcr.io/cshilwant/demo_baseline
+ARG BASE_DISTRO=ghcr.io/texasinstruments/demo_baseline
 
 FROM $BASE_DISTRO
 
 
-LABEL org.opencontainers.image.source https://github.com/cshilwant/adocker/app_qimgv_demo
+LABEL org.opencontainers.image.source https://github.com/TexasInstruments/seva-adocker/app_qimgv_demo
 
 RUN mkdir /tmp/gpu && cd /tmp/gpu && \
          wget https://software-dl.ti.com/processor-sdk-linux/esd/AM62X/08_06_00_42/exports/docs/_images/AM62X_CAMERA_DEMO.jpg && \

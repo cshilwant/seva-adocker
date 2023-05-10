@@ -2,7 +2,7 @@ ARG BASE_DISTRO=arm64v8/debian:stable-slim
 
 FROM $BASE_DISTRO
 
-LABEL org.opencontainers.image.source https://github.com/cshilwant/adocker/demo_baseline
+LABEL org.opencontainers.image.source https://github.com/TexasInstruments/seva-adocker/demo_baseline
 
 RUN export DEBIAN_FRONTEND=noninteractive; apt-get update
 RUN export DEBIAN_FRONTEND=noninteractive; \
