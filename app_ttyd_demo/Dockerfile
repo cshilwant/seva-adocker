@@ -13,4 +13,4 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get update && \
     apt-get purge -y --auto-remove git build-essential ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["/bin/bash", "-c" , "/tmp/gpu/ttyd/build/ttyd -W bash &; chromium http://localhost:7681/"]
+ENTRYPOINT ["/bin/bash", "-c" , "/tmp/gpu/ttyd/build/ttyd -W bash & chromium http://localhost:7681/"]
